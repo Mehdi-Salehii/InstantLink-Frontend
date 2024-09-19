@@ -1,9 +1,13 @@
+import { useState } from "react";
+import { io } from "socket.io-client";
+const socket = io("http://localhost:3000");
 function App() {
-  return (
-    <div className="bg-sky-500">
-      <h1 className="text-lg font-bold text-center  p-10 ">hi</h1>
-    </div>
-  );
+  const [connected, setConnected] = useState("🔴");
+  socket.on("connect", () => {
+    setConnected("🟢");
+    console.log(`connected ${socket.id}`);
+  });
+  return <div className="grid place-items-center">{connected}</div>;
 }
 
 export default App;
