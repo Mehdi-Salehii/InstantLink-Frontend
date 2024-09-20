@@ -5,7 +5,6 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const [connected, setConnected] = useState("🔴");
-  const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
     const newSocket = io(backendUrl, { transports: ["websocket"] });
