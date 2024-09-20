@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { io, Socket } from "socket.io-client";
+import { io } from "socket.io-client";
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -8,7 +8,6 @@ function App() {
 
   useEffect(() => {
     const newSocket = io(backendUrl, { transports: ["websocket"] });
-    setSocket(newSocket);
 
     newSocket.on("connect", () => {
       setConnected("🟢");
