@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { io } from "socket.io-client";
-const socket = io("http://localhost:3000");
+//backend url
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
+const socket = io(BACKEND_URL);
 function App() {
   const [connected, setConnected] = useState("🔴");
   socket.on("connect", () => {
