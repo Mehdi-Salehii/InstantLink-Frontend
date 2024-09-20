@@ -1,15 +1,26 @@
-import { useState } from "react";
-import { io } from "socket.io-client";
+import { useEffect, useState } from "react";
+import { io, Socket } from "socket.io-client";
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-const socket = io(backendUrl, { transports: ["websocket"] });
 function App() {
   const [connected, setConnected] = useState("🔴");
-  socket.on("connect", () => {
-    setConnected("🟢");
-    console.log(`connected ${socket.id}`);
-  });
+  const [socket, setSocket] = useState<Socket | null>(null);
+
+  useEffect(() => {
+    const newSocket = io(backendUrl, { transports: ["websocket"] });
+    setSocket(newSocket);
+
+    newSocket.on("connect", () => {
+      setConnected("🟢");
+      console.log(`connected ${newSocket.id}`);
+    });
+
+    return () => {
+      newSocket.disconnect();
+    };
+  }, []);
+
   return <div className="grid place-items-center">{connected}</div>;
 }
 
