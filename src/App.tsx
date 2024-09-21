@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { io } from "socket.io-client";
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
