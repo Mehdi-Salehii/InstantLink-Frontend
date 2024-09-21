@@ -4,14 +4,16 @@ import { io } from "socket.io-client";
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
-  const [connected, setConnected] = useState("🔴");
-
   useEffect(() => {
+    const connection_indicator = document.querySelector(
+      ".connection-indicator"
+    ) as HTMLDivElement;
+    connection_indicator.innerText = "🔴";
     const newSocket = io(backendUrl, { transports: ["websocket"] });
 
     newSocket.on("connect", () => {
-      setConnected("🟢");
       console.log(`connected ${newSocket.id}`);
+      connection_indicator.innerText = "🟢";
     });
 
     return () => {
@@ -19,7 +21,7 @@ function App() {
     };
   }, []);
 
-  return <div className="grid place-items-center">{connected}</div>;
+  return <div className="connection-indicator grid place-items-center"></div>;
 }
 
 export default App;
