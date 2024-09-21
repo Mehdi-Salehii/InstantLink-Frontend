@@ -16,7 +16,6 @@ function App() {
       connection_indicator.innerText = "🟢";
     });
     newSocket.on("disconnect", () => {
-      console.log(`connected ${newSocket.id}`);
       connection_indicator.innerText = "🔴";
     });
 
