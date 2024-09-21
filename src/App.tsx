@@ -1,30 +1,29 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
+  const [connected, setConnected] = useState("🔴");
   useEffect(() => {
-    const connection_indicator = document.querySelector(
-      ".connection-indicator"
-    ) as HTMLDivElement;
-    connection_indicator.innerText = "🔴";
-    const newSocket = io(backendUrl, { transports: ["websocket"] });
-
+    const newSocket = io(backendUrl, { transports: ["websocket", "polling"] });
     newSocket.on("connect", () => {
       console.log(`connected ${newSocket.id}`);
-      connection_indicator.innerText = "🟢";
+      setConnected("🟢");
     });
-    newSocket.on("disconnect", () => {
-      connection_indicator.innerText = "🔴";
-    });
-
+    newSocket.on("disconnect", () => {});
     return () => {
       newSocket.disconnect();
+      console.log("disconnected");
+      setConnected("🔴");
     };
   }, []);
 
-  return <div className="connection-indicator grid place-items-center"></div>;
+  return (
+    <div className="connection-indicator grid place-items-center">
+      {connected}
+    </div>
+  );
 }
 
 export default App;
