@@ -6,10 +6,12 @@ import {
   signInWithPopup,
   signOut,
   onAuthStateChanged,
-  User,
 } from "firebase/auth";
 import { z } from "zod";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { setUser } from "@/redux/userSlice";
 
 const schema = z.object({
   email: z.string().email("Invalid email address"),
@@ -20,13 +22,18 @@ const AuthUi = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | undefined>(undefined);
-  const [user, setUser] = useState<User | null>(null);
+
   const [isSignUp, setIsSignUp] = useState(false);
+  const { user } = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
 
   // Listen to authentication state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      if (currentUser) {
+        const { email, displayName, uid } = currentUser;
+        dispatch(setUser({ email, displayName, uid }));
+      }
     });
     return () => unsubscribe();
   }, []);
@@ -115,9 +122,10 @@ const AuthUi = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen  text-gray-900 dark:text-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-        {user ? (
+        {user && (
           <>
             <h2 className="text-2xl font-bold">Welcome, {user.email}</h2>
+
             <button
               className="w-full mt-4 px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none"
               onClick={handleLogout}
@@ -125,7 +133,9 @@ const AuthUi = () => {
               Log Out
             </button>
           </>
-        ) : (
+        )}
+
+        {!user && (
           <>
             <h2 className="text-2xl font-bold text-center">
               {isSignUp ? "Sign Up" : "Sign In"}
