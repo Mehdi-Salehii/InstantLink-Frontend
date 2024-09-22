@@ -4,7 +4,6 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signInWithPopup,
-  signOut,
   onAuthStateChanged,
 } from "firebase/auth";
 import { z } from "zod";
@@ -106,36 +105,10 @@ const AuthUi = () => {
     }
   };
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      setError(undefined);
-    } catch (e) {
-      if (e instanceof Error) {
-        setError(e.message);
-      } else {
-        setError("An unknown error occurred");
-      }
-    }
-  };
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  text-gray-900 dark:text-gray-100">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-        {user && (
-          <>
-            <h2 className="text-2xl font-bold">Welcome, {user.email}</h2>
-
-            <button
-              className="w-full mt-4 px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none"
-              onClick={handleLogout}
-            >
-              Log Out
-            </button>
-          </>
-        )}
-
-        {!user && (
+    !user && (
+      <div className="flex flex-col items-center justify-center min-h-screen  text-gray-900 dark:text-gray-100">
+        <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
           <>
             <h2 className="text-2xl font-bold text-center">
               {isSignUp ? "Sign Up" : "Sign In"}
@@ -195,9 +168,9 @@ const AuthUi = () => {
               </button>
             </div>
           </>
-        )}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
