@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import AuthUi from "./components/AuthUi";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -23,9 +25,13 @@ function App() {
   }, []);
 
   return (
-    <div className="connection-indicator grid place-items-center">
-      {connected}
-      <AuthUi />
+    <div className="flex flex-col min-h-svh">
+      <Header />
+      <div className="connection-indicator grid place-items-center grow">
+        {connected}
+        <AuthUi />
+      </div>
+      <Footer />
     </div>
   );
 }
