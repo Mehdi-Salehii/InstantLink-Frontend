@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import AuthUi from "./components/AuthUi";
+
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const [connected, setConnected] = useState("🔴");
+
   useEffect(() => {
     const newSocket = io(backendUrl, { transports: ["websocket", "polling"] });
     newSocket.on("connect", () => {
