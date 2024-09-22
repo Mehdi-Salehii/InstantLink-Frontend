@@ -1,50 +1,83 @@
-# React + TypeScript + Vite
+# InstantLink - Real-time Chat App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![InstantLink Logo](https://github.com/Mehdi-Salehii/InstantLink-Frontend/blob/master/src/assets/logo.png) <!-- Optional: Add a logo image if you have one -->
 
-Currently, two official plugins are available:
+InstantLink is a **real-time chat application** that uses WebSocket connections and a NoSQL database to connect people in moments. It delivers instant messaging with efficient and seamless communication between users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-time WebSocket connection** using Socket.io
+- **NoSQL database** for fast and scalable data storage
+- **Firebase Authentication** with support for multiple providers
+- **Tailwind CSS** for responsive design and styling
+- **Shadcn** for a modern and functional UI library
+- **Zod** for form validation
+- **Redux** for state management
+- **TypeScript** for type safety and better code readability
+- **Vite** for fast development and bundling
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Demo
 
-- Configure the top-level `parserOptions` property like this:
+Check out the live demo of the application [here](https://instant-link-project.vercel.app/).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone the repository:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    ```bash
+    git clone https://github.com/your-username/instantlink-frontend.git
+    cd instantlink-frontend
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Set up environment variables:
+
+    Create a `.env` file in the root directory and add the following:
+
+    ```bash
+    VITE_BACKEND_URL=your-backend-url
+    ```
+
+4. Run the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+    This will start the application in development mode.
+
+## Deployment
+
+The application is deployed on Vercel and is accessible via this URL:  
+[InstantLink Live Demo](https://instant-link-project.vercel.app/)
+
+## Project Structure
+
+- **src/components**: React components for the application UI.
+- **src/redux**: Redux slices and store for state management.
+- **src/utils**: Utility functions, such as authentication helpers.
+
+
+## Tech Stack
+
+- **Frontend**: React, TypeScript
+- **Styling**: Tailwind CSS, Shadcn
+- **Authentication**: Firebase Authentication
+- **Real-time Communication**: Socket.IO
+- **Validation**: Zod
+- **State Management**: Redux
+- **Bundler**: Vite
+- **Deployment**: Vercel
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions or feature requests.
+
+---
+
+Developed with ❤️ by [Mehdi Salehipoor](https://github.com/Mehdi-Salehii)
