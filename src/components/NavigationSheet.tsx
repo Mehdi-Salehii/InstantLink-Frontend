@@ -12,6 +12,7 @@ import { twMerge } from "tailwind-merge";
 import LogoutButton from "./LogoutButton";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import { UserAvatar } from "./UserAvatar";
 export type classNameType = {
   className?: string;
 };
@@ -26,6 +27,7 @@ export function NavigaitonSheet({ className }: classNameType) {
         </SheetTrigger>
         <SheetContent side={"left"} className="w-[51%]">
           <SheetHeader>
+            <UserAvatar className={"w-16 h-16 mt-3 mx-auto"} />
             <p>
               Welcome{" "}
               <span className="font-semibold text-primary">
@@ -33,10 +35,7 @@ export function NavigaitonSheet({ className }: classNameType) {
               </span>
               !
             </p>
-            <SheetTitle></SheetTitle>
           </SheetHeader>
-          <div className="flex gap-5 items-center col-start-1"></div>
-
           <SheetFooter className="mt-5">
             <SheetClose asChild>
               <LogoutButton className={"h-10  w-1/3 mx-auto mt-5"} />

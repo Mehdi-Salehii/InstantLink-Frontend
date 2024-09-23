@@ -28,9 +28,6 @@ export default function Header({
         <div>
           <div className="hidden  left sm:flex gap-5 items-center col-start-1">
             <LogoutButton className={"h-10  "} />
-            <p className="">
-              Welcome <span className="font-semibold">{userDisplayName}</span> !
-            </p>
           </div>
           <NavigaitonSheet className="sm:hidden" />
         </div>
