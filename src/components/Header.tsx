@@ -14,7 +14,7 @@ export default function Header({
   className,
 }: PropsWithChildren<headerProps>) {
   const { connection, user } = useSelector((state: RootState) => state.user);
-  const userDisplayName = user?.displayName || user?.email?.split("@")[0];
+
   return (
     <div
       className={twMerge(
