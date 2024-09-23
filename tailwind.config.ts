@@ -4,13 +4,6 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      gridTemplateAreas: {
-        header: ["left logo connection"],
-      },
-      gridTemplateColumns: {
-        header: "1fr 1fr 1fr",
-      },
-
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -60,8 +53,5 @@ export default {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("@savvywombat/tailwindcss-grid-areas"),
-  ],
+  plugins: [require("tailwindcss-animate")],
 };

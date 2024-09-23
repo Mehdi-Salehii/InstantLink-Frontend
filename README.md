@@ -20,8 +20,6 @@ InstantLink is a **real-time chat application** that leverages WebSocket connect
 
 Check out the live demo of the application [here](https://instant-link-project.vercel.app/).
 
-
-
 ## 🌐 Deployment
 
 The application is deployed on **Vercel** and is accessible via this URL:  
@@ -39,35 +37,34 @@ Here are the main technologies used in InstantLink:
 
 - **[React](https://reactjs.org/)**  
    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="20" height="20" align="center"/> &nbsp;
-   A JavaScript library for building user interfaces.
-   
+  A JavaScript library for building user interfaces.
 - **[TypeScript](https://www.typescriptlang.org/)**  
    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="20" height="20" align="center"/> &nbsp;
-   A strongly typed programming language that builds on JavaScript.
+  A strongly typed programming language that builds on JavaScript.
 
 - **[Tailwind CSS](https://tailwindcss.com/)**  
    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" width="20" height="20" align="center"/> &nbsp;
-   A utility-first CSS framework for styling.
+  A utility-first CSS framework for styling.
 
 - **[Firebase Authentication](https://firebase.google.com/)**  
    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Firebase" width="20" height="20" align="center"/> &nbsp;
-   A comprehensive solution for authentication and identity management.
+  A comprehensive solution for authentication and identity management.
 
 - **[Socket.IO](https://socket.io/)**  
    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg" alt="Socket.IO" width="20" height="20" align="center"/> &nbsp;
-   Enables real-time, bi-directional communication between web clients and servers.
+  Enables real-time, bi-directional communication between web clients and servers.
 
 - **[Redux](https://redux.js.org/)**  
    <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" alt="Redux" width="20" height="20" align="center"/> &nbsp;
-   A predictable state container for JavaScript applications.
+  A predictable state container for JavaScript applications.
 
 - **[Zod](https://zod.dev/)**  
-   <img src="https://avatars.githubusercontent.com/u/43356389?s=200&v=4" alt="Zod" width="20" height="20" align="center"/> &nbsp;
-   A schema declaration and validation library for TypeScript.
+   <img src="https://miro.medium.com/v2/resize:fit:1400/0*yTnXWjd6Tkdr17HN.png" alt="Zod" width="20" height="20" align="center"/> &nbsp;
+  A schema declaration and validation library for TypeScript.
 
 - **[Vite](https://vitejs.dev/)**  
    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" alt="Vite" width="20" height="20" align="center"/> &nbsp;
-   Next-generation front-end tooling for faster development and bundling.
+  Next-generation front-end tooling for faster development and bundling.
 
 ## 👥 Contributing
 

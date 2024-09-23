@@ -19,22 +19,26 @@ export default function Header({
       className={twMerge(
         " bg-yellow-400",
         className,
-        "grid grid-areas-header grid-cols-header items-center"
+        "grid grid-cols-3 items-center"
       )}
     >
       {children}
-      <div className="left flex gap-5 items-center">
-        <LogoutButton className={"h-10  "} />
-        <p className="">
-          Welcome <span className="font-semibold">{userDisplayName}</span> !
-        </p>
-      </div>
+      {user && (
+        <div className="left flex gap-5 items-center">
+          <LogoutButton className={"h-10  "} />
+          <p className="">
+            Welcome <span className="font-semibold">{userDisplayName}</span> !
+          </p>
+        </div>
+      )}
       <img
         src={logo}
         alt="instantlink logo"
-        className="w-16 logo justify-self-center"
+        className="w-16 logo justify-self-center col-start-2"
       />
-      <div className="connection justify-self-end">{connection}</div>
+      <div className="connection justify-self-end col-start-3">
+        {connection}
+      </div>
     </div>
   );
 }
