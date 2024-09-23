@@ -28,9 +28,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-svh">
-      <Header
-        className={"justify-between items-center px-2 py-[1px] bg-teal-100"}
-      />
+      <Header className={" px-2 py-[1px] bg-teal-100"} />
       <div className="connection-indicator grid place-items-center grow">
         <AuthUi />
       </div>

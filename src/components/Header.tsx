@@ -12,13 +12,29 @@ export default function Header({
   children,
   className,
 }: PropsWithChildren<headerProps>) {
-  const { connection } = useSelector((state: RootState) => state.user);
+  const { connection, user } = useSelector((state: RootState) => state.user);
+  const userDisplayName = user?.displayName || user?.email?.split("@")[0];
   return (
-    <div className={twMerge("flex bg-yellow-400", className)}>
+    <div
+      className={twMerge(
+        " bg-yellow-400",
+        className,
+        "grid grid-areas-header grid-cols-header items-center"
+      )}
+    >
       {children}
-      <LogoutButton className={"h-10 "} />
-      <img src={logo} alt="instantlink logo" className="w-16" />
-      <div>{connection}</div>
+      <div className="left flex gap-5 items-center">
+        <LogoutButton className={"h-10  "} />
+        <p className="">
+          Welcome <span className="font-semibold">{userDisplayName}</span> !
+        </p>
+      </div>
+      <img
+        src={logo}
+        alt="instantlink logo"
+        className="w-16 logo justify-self-center"
+      />
+      <div className="connection justify-self-end">{connection}</div>
     </div>
   );
 }
