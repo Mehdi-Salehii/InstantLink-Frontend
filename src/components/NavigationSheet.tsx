@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { twMerge } from "tailwind-merge";
-import LogoutButton from "./LogoutButton";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { UserAvatar } from "./UserAvatar";
@@ -38,11 +37,7 @@ export function NavigaitonSheet({ className }: classNameType) {
           </SheetHeader>
           <SheetFooter className="mt-5">
             <SheetClose asChild>
-              <LogoutConfirm
-                className={
-                  " px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none"
-                }
-              />
+              <LogoutConfirm />
             </SheetClose>
           </SheetFooter>
         </SheetContent>

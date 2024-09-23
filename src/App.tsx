@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useDispatch } from "react-redux";
 import { setConnection } from "./redux/userSlice";
+import { ScrollArea } from "./components/ui/scroll-area";
 
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -31,6 +32,9 @@ function App() {
       <Header className={" px-2 py-[1px] bg-teal-100"} />
       <div className="connection-indicator grid place-items-center grow">
         <AuthUi />
+        <ScrollArea>
+          <div className="bg-teal-500 h-[2500px]"></div>
+        </ScrollArea>
       </div>
       <Footer />
     </div>

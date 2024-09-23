@@ -2,7 +2,7 @@ import { RootState } from "@/redux/store";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
-import LogoutButton from "./LogoutButton";
+
 import logo from "@/assets/logo.png";
 import { NavigaitonSheet } from "./NavigationSheet";
 import { LogoutConfirm } from "./LogoutConfirm";
@@ -26,13 +26,9 @@ export default function Header({
     >
       {children}
       {user && (
-        <div>
-          <div className="hidden  left sm:flex gap-5 items-center col-start-1">
-            <LogoutConfirm
-              className={
-                " px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none"
-              }
-            />
+        <div className="justify-self-start col-start-1 w-full">
+          <div className="hidden sm:block sm:w-1/2 md:w-1/3">
+            <LogoutConfirm />
           </div>
           <NavigaitonSheet className="sm:hidden" />
         </div>
