@@ -26,14 +26,16 @@ export function NavigaitonSheet({ className }: classNameType) {
         <SheetTrigger asChild>
           <Menu className="cursor-pointer" />
         </SheetTrigger>
-        <SheetContent side={"left"}>
+        <SheetContent side={"left"} className="w-[51%]">
           <SheetHeader>
-            <SheetTitle>
-              <p>
-                Welcome <span className="font-semibold">{userDisplayName}</span>
-                !
-              </p>
-            </SheetTitle>
+            <p>
+              Welcome{" "}
+              <span className="font-semibold text-primary">
+                {userDisplayName}
+              </span>
+              !
+            </p>
+            <SheetTitle></SheetTitle>
           </SheetHeader>
           <div className="flex gap-5 items-center col-start-1"></div>
 
