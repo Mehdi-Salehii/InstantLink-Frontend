@@ -25,7 +25,7 @@ export function NavigaitonSheet({ className }: classNameType) {
         <SheetTrigger asChild>
           <Menu className="cursor-pointer" />
         </SheetTrigger>
-        <SheetContent side={"left"} className="w-[51%]">
+        <SheetContent side={"left"} className="sm:w-[51%]">
           <SheetHeader>
             <UserAvatar className={"w-16 h-16 mt-3 mx-auto"} />
             <p>
@@ -38,7 +38,7 @@ export function NavigaitonSheet({ className }: classNameType) {
           </SheetHeader>
           <SheetFooter className="mt-5">
             <SheetClose asChild>
-              <LogoutButton className={"h-10  w-1/3 mx-auto mt-5"} />
+              <LogoutButton className={"h-10  sm:w-1/3 mx-auto mt-5"} />
             </SheetClose>
           </SheetFooter>
         </SheetContent>
