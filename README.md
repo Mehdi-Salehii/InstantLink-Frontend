@@ -59,7 +59,7 @@ Here are the main technologies used in InstantLink:
   A predictable state container for JavaScript applications.
 
 - **[Zod](https://zod.dev/)**  
-   <img src="https://miro.medium.com/v2/resize:fit:1400/0*yTnXWjd6Tkdr17HN.png" alt="Zod" width="20" height="20" align="center"/> &nbsp;
+   <img src="https://seeklogo.com/images/Z/zod-logo-B57E684330-seeklogo.com.png" alt="Zod" width="20" height="20" align="center"/> &nbsp;
   A schema declaration and validation library for TypeScript.
 
 - **[Vite](https://vitejs.dev/)**  
