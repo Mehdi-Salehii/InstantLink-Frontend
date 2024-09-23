@@ -33,7 +33,7 @@ The application is deployed on **Vercel** and is accessible via this URL:
 
 ## ⚙️ Tech Stack
 
-Here are the main technologies used in InstantLink:
+Here are the main technologies used in InstantLink frontend:
 
 - **[React](https://reactjs.org/)**  
    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="20" height="20" align="center"/> &nbsp;

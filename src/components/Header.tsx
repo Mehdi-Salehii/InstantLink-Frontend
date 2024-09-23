@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { twMerge } from "tailwind-merge";
 import LogoutButton from "./LogoutButton";
 import logo from "@/assets/logo.png";
+import { NavigaitonSheet } from "./NavigationSheet";
 
 type headerProps = {
   className?: string;
@@ -24,11 +25,14 @@ export default function Header({
     >
       {children}
       {user && (
-        <div className="left flex gap-5 items-center">
-          <LogoutButton className={"h-10  "} />
-          <p className="">
-            Welcome <span className="font-semibold">{userDisplayName}</span> !
-          </p>
+        <div>
+          <div className="hidden  left sm:flex gap-5 items-center col-start-1">
+            <LogoutButton className={"h-10  "} />
+            <p className="">
+              Welcome <span className="font-semibold">{userDisplayName}</span> !
+            </p>
+          </div>
+          <NavigaitonSheet className="sm:hidden" />
         </div>
       )}
       <img
