@@ -12,6 +12,7 @@ import LogoutButton from "./LogoutButton";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { UserAvatar } from "./UserAvatar";
+import { LogoutConfirm } from "./LogoutConfirm";
 export type classNameType = {
   className?: string;
 };
@@ -37,7 +38,11 @@ export function NavigaitonSheet({ className }: classNameType) {
           </SheetHeader>
           <SheetFooter className="mt-5">
             <SheetClose asChild>
-              <LogoutButton className={"h-10  sm:w-1/3 mx-auto mt-5"} />
+              <LogoutConfirm
+                className={
+                  " px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none"
+                }
+              />
             </SheetClose>
           </SheetFooter>
         </SheetContent>
