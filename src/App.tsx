@@ -3,15 +3,18 @@ import { io } from "socket.io-client";
 import AuthUi from "./components/AuthUi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setConnection } from "./redux/userSlice";
-import { ScrollArea } from "./components/ui/scroll-area";
+import { ChatsScrollable } from "./components/ChatsScrollable";
+import { RootState } from "./redux/store";
+import LoginedUi from "./components/LoginedUi";
 
 //get backend url
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const dispatch = useDispatch();
+  const { user } = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
     const newSocket = io(backendUrl, { transports: ["websocket", "polling"] });
@@ -30,13 +33,14 @@ function App() {
   return (
     <div className="flex flex-col min-h-svh">
       <Header className={" px-2 py-[1px] bg-teal-100"} />
-      <div className="connection-indicator grid place-items-center grow">
-        <AuthUi />
-        <ScrollArea>
-          <div className="bg-teal-500 h-[2500px]"></div>
-        </ScrollArea>
-      </div>
-      <Footer />
+      <main className="connection-indicator  grow flex">
+        {user && <LoginedUi />}
+        {!user && (
+          <div className="w-full grid place-items-center">
+            <AuthUi />
+          </div>
+        )}
+      </main>
     </div>
   );
 }

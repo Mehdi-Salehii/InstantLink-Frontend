@@ -17,13 +17,7 @@ export default function Header({
   const { connection, user } = useSelector((state: RootState) => state.user);
 
   return (
-    <div
-      className={twMerge(
-        " bg-yellow-400",
-        className,
-        "grid grid-cols-3 items-center"
-      )}
-    >
+    <div className={twMerge(className, "grid grid-cols-3 items-center")}>
       {children}
       {user && (
         <div className="justify-self-start col-start-1 w-full">

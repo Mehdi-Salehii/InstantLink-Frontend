@@ -19,7 +19,7 @@ export function LogoutConfirm() {
       <AlertDialogTrigger asChild>
         <Button
           className={
-            " px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none sm:w-1/2 mx-auto"
+            " px-4 py-2 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none sm:w-1/2 mx-auto md:w-[60%]"
           }
         >
           Logout

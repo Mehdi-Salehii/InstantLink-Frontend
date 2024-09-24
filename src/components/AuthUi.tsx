@@ -107,7 +107,7 @@ const AuthUi = () => {
 
   return (
     !user && (
-      <div className="flex flex-col items-center justify-center min-h-screen  text-gray-900 dark:text-gray-100">
+      <div className="    text-gray-900 dark:text-gray-100">
         <div className="w-full max-w-md p-8 space-y-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
           <>
             <h2 className="text-2xl font-bold text-center">
