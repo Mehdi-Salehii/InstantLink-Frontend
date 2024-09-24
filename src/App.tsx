@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { io } from "socket.io-client";
 import AuthUi from "./components/AuthUi";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setConnection } from "./redux/userSlice";
-import { ChatsScrollable } from "./components/ChatsScrollable";
+
 import { RootState } from "./redux/store";
 import LoginedUi from "./components/LoginedUi";
 
