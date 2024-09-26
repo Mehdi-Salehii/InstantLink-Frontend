@@ -1,7 +1,6 @@
 import { RootState } from "@/redux/store";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
-import { twMerge } from "tailwind-merge";
 
 import logo from "@/assets/logo.png";
 import { NavigaitonSheet } from "./NavigationSheet";
@@ -10,14 +9,11 @@ import { LogoutConfirm } from "./LogoutConfirm";
 type headerProps = {
   className?: string;
 };
-export default function Header({
-  children,
-  className,
-}: PropsWithChildren<headerProps>) {
+export default function Header({ children }: PropsWithChildren<headerProps>) {
   const { connection, user } = useSelector((state: RootState) => state.user);
 
   return (
-    <div className={twMerge(className, "grid grid-cols-3 items-center")}>
+    <div className="px-2 py-[1px]  grid grid-cols-3 items-center">
       {children}
       {user && (
         <div className="justify-self-start col-start-1 w-full">

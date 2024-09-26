@@ -27,7 +27,7 @@ export default function ChatBox() {
 
   return (
     <div className="flex flex-col grow">
-      <div className="grow bg-yellow-400 sm:p-3 p-2  ">
+      <div className="grow  sm:p-3 p-2  ">
         <div
           style={{ scrollbarWidth: "none" }}
           className="overflow-y-auto  max-h-[79svh] sm:max-h-[73svh] "
@@ -43,10 +43,7 @@ export default function ChatBox() {
           <div ref={scrollRef} className=""></div>
         </div>
       </div>
-      <form
-        className=" bg-blue-400 sm:p-3 p-2 flex gap-2"
-        onSubmit={handleSubmit}
-      >
+      <form className="  sm:p-3 p-2 flex gap-2" onSubmit={handleSubmit}>
         <Input
           placeholder="Message"
           value={curMessage}
