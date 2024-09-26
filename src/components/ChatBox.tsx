@@ -29,7 +29,7 @@ export default function ChatBox() {
     <div className="flex flex-col grow">
       <div className="grow bg-yellow-400 sm:p-3 p-2  ">
         <div
-          style={{ scrollbarWidth: "thin" }}
+          style={{ scrollbarWidth: "none" }}
           className="overflow-y-auto  max-h-[79svh] sm:max-h-[73svh] "
         >
           {messages.map((message, i) => (
