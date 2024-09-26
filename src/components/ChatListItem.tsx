@@ -14,13 +14,16 @@ export default function ChatListItem({
     <>
       <div
         key={i}
-        className="text-sm flex items-center gap-5 border border-slate-300 p-2 rounded-md"
+        className="text-sm flex items-center gap-5 border border-slate-300 p-2 rounded-md shadow-md shadow-slate-400/50"
       >
+        {" "}
         <Avatar className="grid place-items-center border border-gray-500 ">
           <AvatarImage src={"nothing"} alt="@shadcn" />
           <AvatarFallback>{user.name.slice(0, 2).toUpperCase()}</AvatarFallback>
         </Avatar>
-        <p>{user.name}</p>
+        <a href="#" className="cursor-pointer block ">
+          <p>{user.name}</p>
+        </a>
       </div>
     </>
   );

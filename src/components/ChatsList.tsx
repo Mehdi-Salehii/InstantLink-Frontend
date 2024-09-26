@@ -17,11 +17,9 @@ export function ChatsList({ className }: classNameType) {
       <ScrollArea
         className={twMerge("h-[81svh] w-full rounded-md  ", className)}
       >
-        <div key={"scrollarea"} className="p-4 space-y-5">
+        <div key={"scrollarea"} className="p-4 space-y-1  ">
           {users.map((user, i, users) => (
-            <a href="#" className="cursor-pointer">
-              <ChatListItem {...{ i, user, users }} />
-            </a>
+            <ChatListItem {...{ i, user, users }} />
           ))}
         </div>
       </ScrollArea>
