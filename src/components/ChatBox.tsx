@@ -30,7 +30,7 @@ export default function ChatBox() {
       <div className="grow bg-yellow-400 sm:p-3 p-2  ">
         <div
           style={{ scrollbarWidth: "thin" }}
-          className="overflow-y-auto  max-h-[73svh] scr"
+          className="overflow-y-auto  max-h-[79svh] sm:max-h-[73svh] "
         >
           {messages.map((message, i) => (
             <MessageBubble

@@ -28,11 +28,11 @@ export default function Header({
         </div>
       )}
 
-      <a href="/" className="justify-self-center">
+      <a href="/" className="justify-self-center col-start-2">
         <img
           src={logo}
           alt="instantlink logo"
-          className="w-16 logo justify-self-center col-start-2"
+          className="w-16 logo justify-self-center "
         />
       </a>
       <div className="connection justify-self-end col-start-3">

@@ -33,9 +33,10 @@ function App() {
   return (
     <div className="flex flex-col h-screen">
       <Header className={" px-2 py-[1px] bg-teal-100"} />
-      <main className="connection-indicator  grow flex">
-        {user && <LoginedUi />}
-        {!user && (
+      <main className="connection-indicator  grow flex flex-col">
+        {user ? (
+          <LoginedUi />
+        ) : (
           <div className="w-full grid place-items-center">
             <AuthUi />
           </div>
