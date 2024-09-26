@@ -27,11 +27,14 @@ export default function Header({
           <NavigaitonSheet className="sm:hidden" />
         </div>
       )}
-      <img
-        src={logo}
-        alt="instantlink logo"
-        className="w-16 logo justify-self-center col-start-2"
-      />
+
+      <a href="/" className="justify-self-center">
+        <img
+          src={logo}
+          alt="instantlink logo"
+          className="w-16 logo justify-self-center col-start-2"
+        />
+      </a>
       <div className="connection justify-self-end col-start-3">
         {connection}
       </div>

@@ -2,16 +2,16 @@ const MessageBubble = ({
   message,
   isSent,
   timestamp,
-  key,
+  index,
 }: {
-  key: number | string;
+  index: number | string;
   message: string;
   isSent: boolean;
   timestamp: number;
 }) => {
   return (
     <div
-      key={key}
+      key={index}
       className={`flex ${isSent ? "justify-end" : "justify-start"} mb-2`}
     >
       <div
@@ -19,7 +19,7 @@ const MessageBubble = ({
       >
         <p className="mb-2">{message}</p>
         <span
-          className={`text-xs text-${isSent ? "white" : "black"} absolute bottom-[2px] ${isSent ? "left-[3px]" : "right-[3px]"} `}
+          className={`text-xs text-${isSent ? "white" : "black"} absolute bottom-[2px] ${!isSent ? "left-[3px]" : "right-[3px]"} `}
         >
           {new Intl.DateTimeFormat("en-GB", {
             timeStyle: "short",

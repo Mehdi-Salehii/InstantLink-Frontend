@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-svh">
+    <div className="flex flex-col h-screen">
       <Header className={" px-2 py-[1px] bg-teal-100"} />
       <main className="connection-indicator  grow flex">
         {user && <LoginedUi />}
