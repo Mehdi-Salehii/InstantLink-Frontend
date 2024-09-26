@@ -2,9 +2,7 @@ import { SendHorizontalIcon } from "lucide-react";
 import { Input } from "./ui/input";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import MessageBubble from "./MessageBubble";
-// const wait = async (n: number) => {
-//   return new Promise((res) => setTimeout(res, n));
-// };
+
 export default function ChatBox() {
   const [curMessage, setCurMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
@@ -48,6 +46,7 @@ export default function ChatBox() {
           placeholder="Message"
           value={curMessage}
           onChange={(e) => setCurMessage(e.currentTarget.value)}
+          className="border-gray-400"
         />
         <button className=" rounded-full border bg-blue-950 border-black/40  flex aspect-square w-10 h-10 justify-center items-center">
           <SendHorizontalIcon className="text-white " />
