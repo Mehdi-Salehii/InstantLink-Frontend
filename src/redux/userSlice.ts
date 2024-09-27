@@ -5,11 +5,13 @@ import { User } from "firebase/auth";
 // logined user object and user connection status types
 export interface userState {
   user: Partial<User> | null;
+  chattingTo: string | null;
   connection: string;
 }
 
 const initialState: userState = {
   user: null,
+  chattingTo: null,
   connection: "🔴",
 };
 //create User slice
@@ -23,9 +25,12 @@ export const userSlice = createSlice({
     setConnection: (state, action: PayloadAction<string>) => {
       state.connection = action.payload;
     },
+    setChattingTo: (state, action: PayloadAction<string>) => {
+      state.chattingTo = action.payload;
+    },
   },
 });
 
-export const { setUser, setConnection } = userSlice.actions;
+export const { setUser, setConnection, setChattingTo } = userSlice.actions;
 
 export default userSlice.reducer;
