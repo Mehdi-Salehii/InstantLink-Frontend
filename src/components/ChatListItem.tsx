@@ -1,15 +1,18 @@
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-
 import { Avatar } from "./ui/avatar";
+import { useDispatch } from "react-redux";
+import { setChattingTo } from "@/redux/userSlice";
 
 export default function ChatListItem({
   user,
   i,
 }: {
-  user: { name: string };
+  user: { name: string; id: string };
   i: number;
   users: (typeof user)[];
 }) {
+  const dispatch = useDispatch();
+
   return (
     <>
       <div
@@ -21,7 +24,11 @@ export default function ChatListItem({
           <AvatarImage src={"nothing"} alt="@shadcn" />
           <AvatarFallback>{user.name.slice(0, 2).toUpperCase()}</AvatarFallback>
         </Avatar>
-        <a href="#" className="cursor-pointer block ">
+        <a
+          href="#"
+          className="cursor-pointer block "
+          onClick={() => dispatch(setChattingTo(user.id))}
+        >
           <p>{user.name}</p>
         </a>
       </div>

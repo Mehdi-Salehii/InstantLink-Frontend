@@ -6,7 +6,7 @@ import ChatListItem from "./ChatListItem";
 const users = Array.from({ length: 50 })
 
   .map((_, i) => {
-    return { name: `chat with user ${i + 1}` };
+    return { name: `chat with user ${i + 1}`, id: `${i}` };
   });
 
 export function ChatsList({ className }: classNameType) {
