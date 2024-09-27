@@ -6,9 +6,9 @@ import { ChatsList } from "./ChatsList";
 export default function LoginedUi() {
   // const { chattingTo } = useSelector((state: RootState) => state.user);
   return (
-    <div key={"loginedui"} className=" flex flex-col  grow">
+    <div key={"loginedui"} className=" flex   grow ">
+      {true && <ChatsList />}
       <ChatBox />
-      {false && <ChatsList />}
     </div>
   );
 }

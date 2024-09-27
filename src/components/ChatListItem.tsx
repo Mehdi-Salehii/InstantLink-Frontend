@@ -1,11 +1,9 @@
-import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { Avatar } from "./ui/avatar";
 import { useDispatch } from "react-redux";
 import { setChattingTo } from "@/redux/userSlice";
+import { UserAvatar } from "./UserAvatar";
 
 export default function ChatListItem({
   user,
-  i,
 }: {
   user: { name: string; id: string };
   i: number;
@@ -14,24 +12,24 @@ export default function ChatListItem({
   const dispatch = useDispatch();
 
   return (
-    <>
-      <div
-        key={i}
-        className="text-sm flex items-center gap-5 border border-slate-300 p-2 rounded-md shadow-md shadow-slate-400/50"
+    <div className="text-sm flex items-center gap-5 border border-slate-300 p-2 rounded-md shadow-md shadow-slate-400/50">
+      {" "}
+      <a
+        href=""
+        className="cursor-pointer block "
+        onClick={() => dispatch(setChattingTo(user.id))}
       >
-        {" "}
-        <Avatar className="grid place-items-center border border-gray-500 ">
-          <AvatarImage src={"nothing"} alt="@shadcn" />
-          <AvatarFallback>{user.name.slice(0, 2).toUpperCase()}</AvatarFallback>
-        </Avatar>
-        <a
-          href="#"
-          className="cursor-pointer block "
-          onClick={() => dispatch(setChattingTo(user.id))}
-        >
+        <div className="flex items-center gap-2">
+          <UserAvatar
+            {...{
+              alt: user.name,
+              ...(user.name ? { name: user.name } : { email: user.id }),
+              className: "grid place-items-center border border-gray-500 ",
+            }}
+          />
           <p>{user.name}</p>
-        </a>
-      </div>
-    </>
+        </div>
+      </a>
+    </div>
   );
 }

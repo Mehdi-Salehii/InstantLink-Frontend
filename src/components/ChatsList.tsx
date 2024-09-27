@@ -6,7 +6,7 @@ import ChatListItem from "./ChatListItem";
 const users = Array.from({ length: 50 })
 
   .map((_, i) => {
-    return { name: `chat with user ${i + 1}`, id: `${i}` };
+    return { name: `user ${i + 1}`, id: `${i}` };
   });
 
 export function ChatsList({ className }: classNameType) {
@@ -17,9 +17,9 @@ export function ChatsList({ className }: classNameType) {
       <ScrollArea
         className={twMerge("h-[81svh] w-full rounded-md  ", className)}
       >
-        <div key={"scrollarea"} className="p-4 space-y-1  ">
+        <div className="p-4 space-y-1  ">
           {users.map((user, i, users) => (
-            <ChatListItem {...{ i, user, users }} />
+            <ChatListItem {...{ i, user, users }} key={i} />
           ))}
         </div>
       </ScrollArea>

@@ -1,3 +1,3 @@
 export default function ChattingToRibbon() {
-  return <div>ChattingToRibbon</div>;
+  return <div className=""></div>;
 }

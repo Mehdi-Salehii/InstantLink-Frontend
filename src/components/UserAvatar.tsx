@@ -15,10 +15,11 @@ export function UserAvatar({
   className,
   email,
 }: UserAvatarProps) {
-  const userAbbr =
+  const userAbbr = (
     (name && name.slice(0, 2)) ||
     (email && email.split("@")[0].slice(0, 2)) ||
-    "USER";
+    "US"
+  ).toLocaleUpperCase();
   return (
     <Avatar className={twMerge(className)}>
       <AvatarImage src={src} alt={alt} />
