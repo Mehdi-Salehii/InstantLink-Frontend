@@ -18,7 +18,7 @@ export default function ChatListItem({
       {" "}
       <Link
         to={`/${user.id}`}
-        className="cursor-pointer block "
+        className="cursor-pointer block  w-full"
         onClick={() => dispatch(setChattingTo(user.id))}
       >
         <div className="flex items-center gap-2">

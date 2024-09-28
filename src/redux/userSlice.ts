@@ -25,7 +25,7 @@ export const userSlice = createSlice({
     setConnection: (state, action: PayloadAction<string>) => {
       state.connection = action.payload;
     },
-    setChattingTo: (state, action: PayloadAction<string>) => {
+    setChattingTo: (state, action: PayloadAction<string | null>) => {
       state.chattingTo = action.payload;
     },
   },

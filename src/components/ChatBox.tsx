@@ -1,13 +1,19 @@
-import { SendHorizontalIcon } from "lucide-react";
+import { ArrowLeft, SendHorizontalIcon } from "lucide-react";
 import { Input } from "./ui/input";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import MessageBubble from "./MessageBubble";
+import { useMediaQuery } from "react-responsive";
+import { setChattingTo } from "@/redux/userSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function ChatBox() {
   const [curMessage, setCurMessage] = useState("");
   const [messages, setMessages] = useState<string[]>([]);
   const scrollRef = useRef<HTMLDivElement | null>(null);
-
+  const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const scrollToElement = () => {
     if (scrollRef.current)
       scrollRef.current.scrollIntoView({ behavior: "smooth" });
@@ -24,7 +30,18 @@ export default function ChatBox() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col grow">
+    <div className="flex flex-col grow  relative">
+      {!isDesktop && (
+        <button
+          onClick={() => {
+            dispatch(setChattingTo(null));
+            navigate("/");
+          }}
+          className="  absolute left-5 top-5 border border-foreground rounded-full p-2"
+        >
+          <ArrowLeft className="size-5 text-foreground" />
+        </button>
+      )}
       <div className="grow  sm:p-3 p-2  ">
         <div
           style={{ scrollbarWidth: "none" }}
