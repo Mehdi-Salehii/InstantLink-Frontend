@@ -1,10 +1,9 @@
 import { RootState } from "@/redux/store";
 import { PropsWithChildren } from "react";
 import { useSelector } from "react-redux";
-
-import logo from "@/assets/logo.png";
 import { NavigaitonSheet } from "./NavigationSheet";
 import { LogoutConfirm } from "./LogoutConfirm";
+import ChattingToRibbon from "./ChattingToRibbon";
 
 type headerProps = {
   className?: string;
@@ -15,7 +14,7 @@ export default function Header({ children }: PropsWithChildren<headerProps>) {
   );
 
   return (
-    <div className="px-2 py-[1px]  grid grid-cols-3 items-center">
+    <div className="p-2  grid grid-cols-3 items-center bg-primary">
       {children}
       {user && (
         <div className="justify-self-start col-start-1 w-full">
@@ -25,17 +24,9 @@ export default function Header({ children }: PropsWithChildren<headerProps>) {
           <NavigaitonSheet className="sm:hidden" />
         </div>
       )}
-
-      {!chattingTo && (
-        <a href="/" className="justify-self-center col-start-2">
-          <img
-            src={logo}
-            alt="instantlink logo"
-            className="w-16 logo justify-self-center "
-          />
-        </a>
-      )}
-      {chattingTo}
+      <div className="justify-self-center col-start-2">
+        {chattingTo && <ChattingToRibbon />}
+      </div>
       <div className="connection justify-self-end col-start-3">
         {connection}
       </div>

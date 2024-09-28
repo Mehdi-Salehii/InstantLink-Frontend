@@ -9,7 +9,7 @@ const users = Array.from({ length: 50 })
     return { name: `user ${i + 1}`, id: `${i}` };
   });
 
-export function ChatsList({ className }: classNameType) {
+export function FriendsList({ className }: classNameType) {
   return (
     <div className="  sm:col-start-1 h-full p-2">
       <h2 className="text-center">chats</h2>
