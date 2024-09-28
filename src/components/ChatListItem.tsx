@@ -2,6 +2,8 @@ import { useDispatch } from "react-redux";
 import { setChattingTo } from "@/redux/userSlice";
 import { UserAvatar } from "./UserAvatar";
 
+import { Link } from "react-router-dom";
+
 export default function ChatListItem({
   user,
 }: {
@@ -14,8 +16,8 @@ export default function ChatListItem({
   return (
     <div className="text-sm flex items-center gap-5 border border-slate-300 p-2 rounded-md shadow-md shadow-slate-400/50">
       {" "}
-      <a
-        href=""
+      <Link
+        to={`/${user.id}`}
         className="cursor-pointer block "
         onClick={() => dispatch(setChattingTo(user.id))}
       >
@@ -29,7 +31,7 @@ export default function ChatListItem({
           />
           <p>{user.name}</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
