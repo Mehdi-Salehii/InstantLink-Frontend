@@ -2,6 +2,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { classNameType } from "./NavigationSheet";
 import { twMerge } from "tailwind-merge";
 import ChatListItem from "./ChatListItem";
+import { Button } from "./ui/button";
+import { UserRoundPlus } from "lucide-react";
 
 const users = Array.from({ length: 50 })
 
@@ -16,6 +18,13 @@ export function FriendsList({ className }: classNameType) {
 
       <ScrollArea className={twMerge("h-[81svh] w-full rounded-md  ")}>
         <div className="p-4 space-y-1  ">
+          <Button
+            variant={"default"}
+            className="absolute bottom-3 right-[50%] translate-x-[50%] rounded-full flex flex-row-reverse gap-2 items-center justify-center "
+          >
+            <span className="font-semibold">Add a friend</span>
+            <UserRoundPlus className="opacity-50" />
+          </Button>
           {users.map((user, i, users) => (
             <ChatListItem {...{ i, user, users }} key={i} />
           ))}

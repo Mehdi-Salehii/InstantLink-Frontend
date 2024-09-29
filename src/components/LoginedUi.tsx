@@ -16,7 +16,7 @@ export default function LoginedUi() {
       {isDesktop ? (
         // Desktop view: Show both friends list and chat side by side
         <div className="desktop-layout flex grow ">
-          <FriendsList />
+          <FriendsList className="w-[25%]" />
           {chattingTo && <ChatBox />}
         </div>
       ) : (
